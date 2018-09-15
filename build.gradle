@@ -8,6 +8,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
+
+        classpath 'com.android.tools.build:gradle:3.1.2'
         
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -17,11 +19,30 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.google.com/' }
         jcenter()
+        google()
+        maven { url "http://dl.bintray.com/lukaville/maven" }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+ext {
+
+    // App dependencies
+    retrofitVersion = '2.3.0'
+    rxAndroidVersion = '2.0.1'
+    rxJavaAdapterVersion = '2.3.0'
+    rxJavaRelayVersion = '2.0.0'
+    okHttp3Version = '3.6.0'
+    butterKnifeVersion = '8.6.0'
+    sspVersion = '1.0.4'
+    sdpVersion = '1.0.4'
+    picassoVersion = '2.5.2'
+    mcvVersion = '1.4.3'
+    butterKnifeVersion = '8.6.0'
+    materialDialogsVersion = '0.9.5.0'
 }
